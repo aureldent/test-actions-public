@@ -29,7 +29,7 @@ jobs:
         name: Tests HM
         runs-on: ubuntu-latest
         needs: pre_job
-        if: ${{ needs.pre_job.outputs.should_skip != 'true' }} #${{ github.event.pull_request.draft == false }} and
+        if: ${{ needs.pre_job.outputs.should_skip != 'true' && github.event.pull_request.draft == false }} #${{ github.event.pull_request.draft == false }} and
         steps:
             - name: Check the code out
               uses: actions/checkout@v2
