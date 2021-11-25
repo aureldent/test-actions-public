@@ -35,8 +35,7 @@ jobs:
             - name: Check the code out
               uses: actions/checkout@v2
               with:
-                  token: ${{ secrets.GITBOT_TOKEN }}
-                  submodules: true
+                  token: ${{ secrets.GITHUB_TOKEN }}
 
             - name: step
               run: echo "Hello world!"
